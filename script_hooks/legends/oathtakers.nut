@@ -145,6 +145,13 @@
 	}
 });
 
+::mods_hookExactClass("skills/backgrounds/oathbreaker_background", function(obb) {
+	obb.getTooltip = function ()
+	{
+		return this.character_background.getTooltip();
+	}
+});
+
 ::mods_hookNewObject("events/offplus_oathtakers_events/special/oathtakers_book_copied_event", function(obce) {
 	local screen = obce.m.Screens.filter(function(index, screen) {
 		return screen.ID == "A";
